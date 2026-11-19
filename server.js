@@ -1,3 +1,6 @@
+require("dotenv").config();
+const connectDB = require("./config/db");
+connectDB(); // Connect to the database
 require("dotenv").config(); // loads the secret key from the .env file
 
 const express = require("express");

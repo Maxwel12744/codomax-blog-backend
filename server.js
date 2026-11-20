@@ -55,6 +55,7 @@ app.use((err, req, res, next) => {
   }
   // The database refused the data
   if (err.name === "ValidationError") {
+    console.error("Validation error:", err.message);
     return res
       .status(400)
       .json({ message: "Some of the details are not valid." });

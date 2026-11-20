@@ -1,5 +1,6 @@
 // Blog routes: create, read, update and delete blog posts
 
+const User = require("../models/User");
 const express = require("express");
 const mongoose = require("mongoose");
 const Blog = require("../models/Blog");

@@ -17,11 +17,10 @@ function requireAuth(req, res, next) {
     req.user = { id: payload.id, name: payload.name, email: payload.email };
     next(); // allowed, continue to the route
   } catch (error) {
-    return res
-      .status(401)
-      .json({
-        message: "Your session is invalid or has expired. Please log in again.",
-      });
+    console.error("Authentication error:", error.message);
+    return res.status(401).json({
+      message: "Your session is invalid or has expired. Please log in again.",
+    });
   }
 }
 

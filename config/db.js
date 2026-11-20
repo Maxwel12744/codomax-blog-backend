@@ -36,5 +36,7 @@ async function connectDB() {
     process.exit(1);
   }
 }
-
 module.exports = connectDB;
+// Use public DNS servers, because some networks cannot look up MongoDB's SRV addresses
+const dns = require("node:dns");
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
